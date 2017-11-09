@@ -1,0 +1,190 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+.atom-dock-toggle-button-inner{
+  background: rgba(255,255,255,0) !important;
+}
+.atom-dock-mask{
+  background-color: rgba(0,0,0,0.9) !important;
+}
+
+@pane-item-background-color:#FFFFFF;
+
+.Workspace{
+  background: #FFFFFF;
+  color:#FFFFFF;
+}
+.WorkspaceCenter{
+  background: #FFFFFF;
+  color:#FFFFFF;
+}
+
+// .tree-view {
+//     @backgournd-image:url('/Users/sakamotokazuki/Pictures/ラブライブ.JPG')
+// }
+@background-icon: url('/Users/sakamotokazuki/Pictures/ラブライブ.png') no-repeat fixed right bottom;
+@backgournd-image:
+url('/Users/sakamotokazuki/Pictures/ラブライブ.png') no-repeat left/contain,
+url('/Users/sakamotokazuki/Pictures/ラブライブ.png') no-repeat right/contain;
+@backgournd-image-terminal:
+url('/Users/sakamotokazuki/Pictures/ラブライブ.png') no-repeat right bottom;
+@backgound-color-editor: rgba(0, 0, 0, 0.4);
+@backgound-color-frame: rgba(0, 0, 0, 0.8);
+@backgound-color-gutter: rgba(0, 0, 0, 0.6);
+
+.platformio-ide-terminal .xterm {
+    background-color: rgba(0,0,0,0);
+    color:inherit;
+}
+atom-workspace {
+    background: @backgournd-image;
+
+
+    atom-pane {
+        // エディタの親
+        background-color: transparent;
+
+        atom-text-editor {
+            // エディタ部分
+            background-color: @backgound-color-editor;
+            font-family: @font-family;
+        }
+    }
+
+    .list-inline {
+        // タブの背景
+        background-color: @backgound-color-frame;
+    }
+
+    atom-panel {
+        // 画面下部(スクロールバー)
+        background-color: @backgound-color-frame !important;
+    }
+}
+
+atom-text-editor::shadow {
+    .gutter {
+        // 行番号
+        background-color: @backgound-color-gutter;
+    }
+
+    .scrollbar-content {
+        // スクロールバー
+        background-color: @backgound-color-gutter;
+    }
+}
+atom-text-editor, .tab-bar .tab, .tab-bar .tab:before, .tab-bar .tab:after, .tab-bar:after,
+ .tool-panel
+{
+    background: none;
+}
+atom-text-editor::shadow {
+      // カーソルの色
+      .cursor {
+        border-color: white;
+      }
+    //　カーソル選択（行）
+        .line.cursor-line {
+            background: rgba(80, 50, 50, 0.4);
+        }
+}
+
+.vertical {
+    .pane {
+        &.active {
+            opacity: 0.9;
+        }
+    }
+
+    .panes .pane-column > *,
+    .panes .pane-row > * {
+        border-right: 0;
+    }
+}
+
+// タブの色をなくす（テーマが白の場合は値を255にする。）
+.tab-bar
+{
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+.tab.active{
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+
+atom-text-editor, .tab-bar .tab, .tab-bar .tab:before, .tab-bar .tab:after, .tab-bar:after,
+ .tool-panel
+{
+    background: none;
+}
+// ステータスバー（一番下の色）
+.status-bar{
+  background-color: rgba(0,0,0,0.9);
+}
+// 初期ガイド
+.wrap-guide{
+  background-color: rgba(255,255,255,0.0) !important;
+}
+
+
+
+// Settings
+.settings-view .package-card, .settings-view select.form-control
+{
+ background-color: rgba(0, 0, 0,  .4);
+}
+
+.settings-view .package-card:hover
+{
+ background-color: rgba(0, 0, 0,  .1) !important;
+}
+
+.settings-view .config-menu
+{
+ background-color: rgba(0, 0, 0,  .3);
+}
+
+atom-text-editor[mini]
+{
+ background-color: rgba(0, 0, 0, .6) !important;
+}
+
+atom-pane-container atom-pane .item-views .pane-item
+{
+ background: none;
+}
+
+
+// Styles for the markdown preview.
+@backgound-color-md: rgba(0, 0, 0, 0.8);
+@color-md: #cccccc;
+@font-family-md: @font-family;
+
+.markdown-preview.native-key-bindings {
+    background-color: @backgound-color-md;
+    color: @color-md;
+}
+
+.markdown-preview {
+    blockquote,
+    code,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    pre,
+    tt {
+        font-family: @font-family-md;
+    }
+}
